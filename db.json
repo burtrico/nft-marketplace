@@ -1,0 +1,15 @@
+{
+  "NFTs": [
+    {
+      "id": 1,
+      "title": "crypto-punk",
+      "creator": "typicode"
+    },
+    {
+      "id": 2,
+      "title": "json-server",
+      "creator": "typicode"
+    }
+  ]
+
+}
