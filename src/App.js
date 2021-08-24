@@ -2,23 +2,20 @@ import './App.css';
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import NavBar from './NavBar';
 import NFT_List from './NFT_List';
-import { useEffect } from 'react';
+import React , { useEffect } from 'react';
+import NftApi from "./NftApi"
 
 function App() {
 
-useEffect(
-fetch()
-  ,[])
+
 
   return (
     <div className="App">
-      <NavBar />
 
-      <BrowserRouter >
-        <Route exact path="/NFT_List" component={NFT_List}>
-          
-        </Route>
-      </BrowserRouter>
+
+      <NftApi/>
+
+
     </div>
   );
 }
