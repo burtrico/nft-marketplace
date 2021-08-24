@@ -1,11 +1,12 @@
 
-function NavBar() {
+function NavBar({ color, title, description, changeColor }) {
     
 
 return(
     <div className="NavBar" >
     <h2>NavBar</h2>
-    
+            <div className="content">{title}</div>
+            <div className="sub header">{description}</div>  
     
     </div>
     )
@@ -13,3 +14,4 @@ return(
 
 
 export default NavBar;
+

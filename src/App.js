@@ -1,9 +1,7 @@
 import './App.css';
-import { BrowserRouter, Switch, Route } from 'react-router-dom'
+// import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import NavBar from './NavBar';
-import NFT_List from './NFT_List';
-import React , { useEffect } from 'react';
-import NftApi from "./NftApi"
+import NFThome from "./NFThome"
 
 function App() {
 
@@ -12,8 +10,13 @@ function App() {
   return (
     <div className="App">
 
+      <NavBar />
 
-      <NftApi/>
+      <NFThome/>
+
+     
+
+
 
 
     </div>
@@ -22,5 +25,5 @@ function App() {
 
 export default App;
 
-{/* < NFTs /> [ data ]
-  < crypto_punks /> [ crypto_punks ] */}
+/* < NFTs /> [ data ]
+  < crypto_punks /> [ crypto_punks ] */
