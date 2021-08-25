@@ -21,51 +21,46 @@ const NFTs = [
         }
   ]
 
-  let walletNFTs = [
-    {
-        id: 1,
-        name: "beef",
-        price: 5.99,
-        section: "meat",
-        description: "Delicious cow meat, moo moo!",
-        image: "https://www.kroger.com/product/images/medium/front/0001111096970"
-    }
-]
-
 function NFThome(){
 
     const [data,setData] = useState([]);
-    // const [walletNFTs,setWalletNFTs] = useState([]);
+    const [walletNFTs,setWalletNFTs] = useState( [] );
+    const [loading, setLoading] = useState(false);
 
     const addToWallet = (NFTtoAdd) => {
-        console.log("State of Wallet before adding:", walletNFTs)
-        // setWalletNFTs([...walletNFTs, NFTtoAdd])
+        setWalletNFTs([...walletNFTs, NFTtoAdd])
       }
 
  useEffect(function(){
-    setData(NFTs);
-    //     fetch("https://api.opensea.io/api/v1/collections?offset=0&limit=100")
-    //     .then(response => response.json())
-    //     .then(response =>
-    //         console.log(response) 
-    //         //  setData(response)
-    //         );
+    // setData(NFTs);
+    setLoading(true);
+        fetch("https://api.opensea.io/api/v1/collections?offset=0&limit=100")
+        .then(response => response.json())
+        .then(response => 
+            setData(response)
+            
+        );
+        setLoading(false)
+        // ^^^ Make sure this runs alright here
    },[])
 
     
 
-    return(<>
-
+    return(
+        <>
+        { console.log(walletNFTs) }
         <NFTlist data={data} 
         addToWallet={addToWallet} />
 
         <NFTwallet walletNFTs={walletNFTs}
+        addToWallet={addToWallet}
          />
 
 
    
 
-    </>)
+        </>
+        )
   
 }
 

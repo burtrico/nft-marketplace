@@ -21,8 +21,8 @@ function NFTlist( {data, addToWallet} ) {
                 spacing={10}
                 direction="row"
             >
-            { data.map(NFT => 
-            { return(
+            { data && data.map(NFT => {
+             return(
                 <Grid key={NFT.id} item xs={3}>
                   <NFTcard
                     key={NFT.id}
@@ -31,8 +31,8 @@ function NFTlist( {data, addToWallet} ) {
                   />
 
                 </Grid>
-              )})
-            }
+              )}
+            )}
 
             </Grid>
             </Box>
