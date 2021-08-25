@@ -1,6 +1,6 @@
 import './App.css';
-import { BrowserRouter, Switch, Route } from 'react-router-dom'
-import NavBar from './NavBar';
+// import { BrowserRouter, Switch, Route } from 'react-router-dom'
+
 import NFThome from "./NFThome"
 
 function App() {
@@ -9,8 +9,6 @@ function App() {
 
   return (
     <div className="App">
-
-      <NavBar />
 
       <NFThome/>
 

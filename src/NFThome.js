@@ -1,6 +1,10 @@
+import React from "react";
+import ReactDOM from "react-dom";
 import {useState , useEffect} from "react";
+import { BrowserRouter , Route , NavLink , Switch } from "react-router-dom";
 import NFTlist from "./NFTlist";
 import NFTwallet from "./NFTwallet";
+import NavBar from "./NavBar";
 
 
 function NFThome(){
@@ -19,6 +23,8 @@ const options = {method: 'GET'};
 fetch('https://api.opensea.io/api/v1/collections?offset=0&limit=50', options)
   .then(response => response.json())
   .then(response => setData(response.collections))
+
+  
  
 
 
@@ -27,17 +33,28 @@ fetch('https://api.opensea.io/api/v1/collections?offset=0&limit=50', options)
 
     return(
         <>
-        { console.log(walletNFTs) }
-       
-        <NFTlist
-        data={data} 
-        addToWallet={addToWallet} />
-
-        <NFTwallet
-        walletNFTs={walletNFTs}
-        addToWallet={addToWallet}
-         />
         
+        <BrowserRouter>
+        <NavBar/>
+        { console.log(walletNFTs) }
+
+            <Switch>
+                <Route path="/NFTlist">
+                    <NFTlist
+                    data={data} 
+                    addToWallet={addToWallet}
+                    />
+                </Route>
+
+                <Route path="/NFTwallet">
+                    <NFTwallet
+                    walletNFTs={walletNFTs}
+                    addToWallet={addToWallet}
+                    />
+                </Route>
+
+            </Switch>
+        </BrowserRouter>
         </>
         )
   

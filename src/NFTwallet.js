@@ -10,7 +10,7 @@ function NFTwallet(props) {
     return(
         <div id="itemList">
           <Container align="center">    
-            <h1>NFT Wallet</h1>
+            <h1>NFT Wallet...</h1>
 
             <Box m={5}>
             <Grid
@@ -30,6 +30,10 @@ function NFTwallet(props) {
                 </Grid>
               )}
             )}
+
+
+
+
 
             </Grid>
             </Box>
