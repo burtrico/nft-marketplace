@@ -1,14 +1,30 @@
 import NFTcard from './NFTcard.js'
 
 // Material-UI Imports
-import { Grid } from '@material-ui/core';
+import { createChainedFunction, Grid } from '@material-ui/core';
 import { Box } from '@material-ui/core';
 import { Container } from '@material-ui/core';
 
 
-function NFTlist( {data, addToWallet} ) {
+function NFTlist(props) {
 
 
+//   return(<>
+//     {
+//         props.data.map(
+//             function(objectIn){
+//                   return(
+//                     <Grid key={NFT.id} item xs={3}>
+//                     <NFTcard
+//                       data={objectIn}
+//                     />
+//                     </Grid>
+                      
+//                   )
+//             }
+//         )
+//     }
+// </>)
 
     return(
         <div id="itemList">
@@ -21,18 +37,21 @@ function NFTlist( {data, addToWallet} ) {
                 spacing={10}
                 direction="row"
             >
-            { data && data.map(NFT => {
-             return(
-                <Grid key={NFT.id} item xs={3}>
-                  <NFTcard
-                    key={NFT.id}
-                    NFT={NFT}
-                    addToWallet={addToWallet}
-                  />
-
-                </Grid>
-              )}
-            )}
+    {
+        props.data.map(
+            function(objectIn){
+                  return(
+                    <Grid key={objectIn.id} item xs={3}>
+                    <NFTcard
+                      data={objectIn}
+                      addToWallet={props.addToWallet}
+                    />
+                    </Grid>
+                      
+                  )
+            }
+        )
+    }
 
             </Grid>
             </Box>

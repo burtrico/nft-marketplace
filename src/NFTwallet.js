@@ -4,9 +4,8 @@ import { Box } from '@material-ui/core';
 import { Container } from '@material-ui/core';
 import NFTcard from './NFTcard';
 
-function NFTwallet({walletNFTs, addToWallet}) {
+function NFTwallet(props) {
 
-    console.log(walletNFTs)
 
     return(
         <div id="itemList">
@@ -20,13 +19,12 @@ function NFTwallet({walletNFTs, addToWallet}) {
                 direction="row"
             >
                         
-            { walletNFTs && walletNFTs.map(NFT => {
+            { props.walletNFTs && props.walletNFTs.map(objectIn => {
             return(
-                <Grid key={NFT.id} item xs={3}>
+                <Grid key={objectIn.id} item xs={3}>
                   <NFTcard
-                    key={NFT.id}
-                    NFT={NFT}
-                   addToWallet={addToWallet}
+                   data={objectIn}
+                   addToWallet={props.addToWallet}
 
                   />
                 </Grid>
