@@ -35,6 +35,14 @@ code {
   max-height: auto;
 }
 
+.eth {
+  width: 12px;
+  height: auto;
+  vertical-align: middle;
+}
+
+
+
 /*No Clue how to add this to the nftCards yet, check the 
 https://material-ui.com/components/grid/        */
 

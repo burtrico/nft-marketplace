@@ -18,25 +18,25 @@ function NFThome(){
         const addFilter = walletNFTs.filter(nftCard => nftCard === nftToAdd)
         if (addFilter.length < 1) {
 
-            // const postObj = {
-            //     method: 'POST',
-            //     headers: {
-            //       "Content-Type": "application/json",
-            //       Accept: "application/json" },
-            //         body: JSON.stringify(nftToAdd)
-            //     }
+            const postObj = {
+                method: 'POST',
+                headers: {
+                  "Content-Type": "application/json",
+                  Accept: "application/json" },
+                    body: JSON.stringify(nftToAdd)
+                }
                 
-            //     fetch('http://localhost:3000/NFTs', postObj)
-            //     .then(resp => resp.json())
-            //     .then(addedObj =>
-                    setWalletNFTs([...walletNFTs, nftToAdd])
-                // )
+                fetch('http://localhost:3000/NFTs', postObj)
+                .then(resp => resp.json())
+                .then(nftObj =>
+                    setWalletNFTs([...walletNFTs, nftObj])
+                )
     }}
 
     const removeFromWallet =(nftToRemove)=> {
         const removeFilter = walletNFTs.filter(nftCard => nftCard !== nftToRemove)
         setWalletNFTs(removeFilter)
-        // fetch(`http://localhost:3000/NFTs/${nftToRemove.id}`, {method: 'DELETE'})
+        fetch(`http://localhost:3000/NFTs/${nftToRemove.id}`, {method: 'DELETE'})
     }
       
     //   function destroyHandler(botObj) {
@@ -72,7 +72,12 @@ function NFThome(){
 
         })
         
-        
+        fetch('http://localhost:3000/NFTs')
+        .then(resp => resp.json())
+        .then(walletArray => {
+            setWalletNFTs(walletArray)
+        })
+
         //   fetch(`https://api.opensea.io/api/v1/assets?order_direction=asc&offset=0&limit=25&collection=boredapeyachtclub`, get)     
         //   .then(response => response.json())
         //   .then(nftArray => {

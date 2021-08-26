@@ -24,11 +24,14 @@ function NFTlist(props) {
             >
 
             <Grid
-                gap={10}
-                row-gap={10}
+                // gap={10}
+                // row-gap={10}
                 container
-                spacing={10}
                 direction="row"
+                alignItems="center"
+                justifyContent="center"
+                spacing={10}
+                // justifyContent="space-between"
             >
     {
         props.data.map(
