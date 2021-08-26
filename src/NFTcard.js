@@ -13,7 +13,7 @@ function NFTcard({nftObj, addToWallet, removeFromWallet}) {
       // if(nftObj.last_sale !== null) {
       //   if(nftObj.last_sale.payment_token.eth_price !== null ) {
       //     return(<h4>{nftObj.last_sale.payment_token.eth_price}</h4>)
-      let x = 10;
+      let x = 20;
       if(nftObj.asset_contract.name === "cryptopunks") { let x = 2000 }
       if(nftObj.asset_contract.name === "boredapeyachtclub") { let x = 300 }
       else if(nftObj.asset_contract.name === "pudgypenguins") { let x = 10 }
