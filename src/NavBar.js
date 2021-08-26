@@ -1,35 +1,71 @@
 import { NavLink } from "react-router-dom";
 
+
+const linkStyles = {
+    padding: "3px 10px 3px 10px",
+    margin: "5px",
+    textDecoration: "none",
+    color: "white",
+    borderRadius: "10px",
+  };
+
+
+
+
 function NavBar({ color, title, description, changeColor }) {
     
 
     return(
     <div className="NavBar" >
-    <ul class="navlist">
-        <li class="navlink">
-        <NavLink
-            to="/"
-        >
-            Home
-        </NavLink>
-        </li>
 
-        <li class="navlink">
-        <NavLink
-            to="NFTlist"
-        >
-            NFT List
-        </NavLink>
-        </li>
+        <div class="title">// NFT Marketplace</div>
 
-        <li class="navlink">
-        <NavLink
-            to="NFTwallet"
-        >
-            NFT Wallet
-        </NavLink>
-        </li>
-    </ul>
+        <div class="navlink">
+            <NavLink
+                to="/NFTmint"
+                exact
+                style={linkStyles}
+                activeStyle={{
+                background: "white",
+                color: "black",
+                }}
+            >
+                NFTmint
+            </NavLink>
+        </div>
+
+        <div class="navlink">
+            <NavLink
+                to="/NFTwallet"
+                exact
+                style={linkStyles}
+                activeStyle={{
+                background: "white",
+                color: "black",
+                }}
+            >
+                NFT Wallet
+            </NavLink>
+        </div>
+
+        <div class="navlink">
+            <NavLink
+                to="/"
+                exact
+                style={linkStyles}
+                activeStyle={{
+                background: "white",
+                color: "black",
+                }}
+            >
+                NFT List
+            </NavLink>
+        </div>
+
+        
+
+        
+
     </div>
 )
 }

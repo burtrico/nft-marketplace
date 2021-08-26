@@ -1,5 +1,6 @@
 
 import NFTwallet from './NFTwallet.js'
+import './index.css';
 
 function NFTcard({nftObj, addToWallet, removeFromWallet}) {
 
@@ -10,7 +11,7 @@ function NFTcard({nftObj, addToWallet, removeFromWallet}) {
     // }
 
     return (
-        <div>
+        <div >
         <img src={nftObj.image_url} className="nftImage" alt="no img" />
         <h3>{nftObj.name}</h3>  
         <h4>{nftObj.asset_contract.name}</h4>

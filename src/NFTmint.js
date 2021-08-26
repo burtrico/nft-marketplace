@@ -4,9 +4,9 @@ import './index.css';
 import { Grid } from '@material-ui/core';
 import { Box } from '@material-ui/core';
 import { Container } from '@material-ui/core';
-import NFTcard from './NFTcard';
 
-function NFTwallet(props) {
+
+function NFTmint(props) {
 
 
     return(
@@ -21,22 +21,7 @@ function NFTwallet(props) {
                 direction="row"
             >
                         
-            { props.walletNFTs && props.walletNFTs.map(objectIn => {
-            return(
-                <Grid
-                  className="nftCard"
-                  key={objectIn.id}
-                  item xs={3}
-                >
-
-                  <NFTcard
-                   nftObj={objectIn}
-                   removeFromWallet={props.removeFromWallet}
-
-                  />
-                </Grid>
-              )}
-            )}
+            Mint...
 
 
 
@@ -49,4 +34,4 @@ function NFTwallet(props) {
     )
 }
 
-export default NFTwallet;
+export default NFTmint;

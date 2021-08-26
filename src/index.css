@@ -5,6 +5,22 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: aliceblue;
+ 
+}
+
+
+a {
+  color:rgb(172, 172, 172);
+  text-decoration: none;
+}
+a:hover {
+  color:rgb(255, 255, 255);
+  text-decoration: none;
+}
+
+.pageframe {
+  margin-top: 150px;
 }
 
 code {
@@ -21,8 +37,76 @@ code {
 
 /*No Clue how to add this to the nftCards yet, check the 
 https://material-ui.com/components/grid/        */
-.nftCard {
-  border-color: black;
-  border-width: 2px;
-  border-radius: 5px;
+
+.NavBar {
+  border-color: rgb(255, 255, 255);
+  background-color: rgb(41, 43, 73);
+  border-width: 0 0 1px 0;
+  border-style: solid;
+  height: 20px;
+  width: 100%;
+  margin: 0 auto 0 auto;
+  padding: 5px 0 10px 20px;
+  position:fixed;
+  top: 0;
+  box-shadow: 0px 10px 10px rgba(0, 0, 0, .4);
 }
+
+.title {
+  color: white;
+  border-color: rgb(126, 126, 126);
+  display: inline;
+  float: left;
+  font-size: 20px;
+}
+
+.navlink {
+
+  display: inline;
+  float: right;
+  margin: 2px 40px 10px 0;
+  
+}
+
+
+.nftCard {
+  border-color: rgb(126, 126, 126);
+  border-width: 1px;
+  border-radius: 10px;
+  border-style: dotted;
+  background-color: white;
+  
+}
+
+.addButtonDiv {
+
+  
+}
+
+.addButton {
+  border-color: rgb(126, 126, 126);
+  border-width: 1px;
+  border-radius: 10px;
+  border-style: dotted;
+  width: 125px;
+  height: 40px;
+  font-size: 15px;
+  transition: color .5s, background-color .5s;
+  
+}
+
+.addButton:hover {
+  border-color: rgb(126, 126, 126);
+  color: white;
+  background-color: rgb(0, 0, 0);
+  border-width: 1px;
+  border-radius: 10px;
+  border-style: dotted;
+  width: 125px;
+  height: 40px;
+  font-size: 15px;
+  
+}
+
+
+
