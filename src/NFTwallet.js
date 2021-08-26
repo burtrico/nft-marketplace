@@ -23,8 +23,8 @@ function NFTwallet(props) {
             return(
                 <Grid key={objectIn.id} item xs={3}>
                   <NFTcard
-                   data={objectIn}
-                   addToWallet={props.addToWallet}
+                   nftObj={objectIn}
+                   removeFromWallet={props.removeFromWallet}
 
                   />
                 </Grid>

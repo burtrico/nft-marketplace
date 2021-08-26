@@ -9,26 +9,84 @@ import NavBar from "./NavBar";
 
 function NFThome(){
 
-    const [data,setData] = useState([]);
+    const [data, setData] = useState([]);
     const [walletNFTs,setWalletNFTs] = useState( [] );
     const [loading, setLoading] = useState(false);
 
-    const addToWallet = (NFTtoAdd) => {
-        setWalletNFTs([...walletNFTs, NFTtoAdd])
-      }
+    const addToWallet = (nftToAdd) => {
+        const addFilter = walletNFTs.filter(nftCard => nftCard === nftToAdd)
+        if (addFilter.length < 1) {
 
+            // const postObj = {
+            //     method: 'POST',
+            //     headers: {
+            //       "Content-Type": "application/json",
+            //       Accept: "application/json" },
+            //         body: JSON.stringify(nftToAdd)
+            //     }
+                
+            //     fetch('http://localhost:3000/NFTs', postObj)
+            //     .then(resp => resp.json())
+            //     .then(addedObj =>
+                    setWalletNFTs([...walletNFTs, nftToAdd])
+                // )
+    }}
+
+    const removeFromWallet =(nftToRemove)=> {
+        const removeFilter = walletNFTs.filter(nftCard => nftCard !== nftToRemove)
+        setWalletNFTs(removeFilter)
+        // fetch(`http://localhost:3000/NFTs/${nftToRemove.id}`, {method: 'DELETE'})
+    }
       
-const options = {method: 'GET'};
+    //   function destroyHandler(botObj) {
+    //     const destroyFilter1 = myBotArmy.filter(botCard => botCard !== botObj)
+    //     setMyBotArmy(destroyFilter1)
+        
 
-fetch('https://api.opensea.io/api/v1/collections?offset=0&limit=50', options)
-  .then(response => response.json())
-  .then(response => setData(response.collections))
+    useEffect( ()=>  {
+        const collections = ['cryptopunks', 'boredapeyachtclub', 'pudgypenguins', 'guttercatgang']
+        const get = {method: 'GET'};
 
-  
- 
+            let completeNftArray = [];
+
+        collections.forEach(collection => { console.log(collection)
+                
+            fetch(`https://api.opensea.io/api/v1/assets?order_direction=asc&offset=0&limit=25&collection=${collection}`, get)     
+            .then(response => response.json())
+            .then(nftArray => {
+                console.log(nftArray.assets)
+                    nftArray.assets.forEach(eachNFT =>{
+                        
+                            // Had to remove one NFT where an image would not load
+                            if(eachNFT.name !== "CryptoPunk #10000") {
+
+                            completeNftArray.push(eachNFT) }
+                        })                    
+                    console.log("NOW:  ", completeNftArray)
+                })
+            .catch(err => console.error(err))
+            
+            setData(completeNftArray);  
+            setLoading(true);
+
+        })
+        
+        
+        //   fetch(`https://api.opensea.io/api/v1/assets?order_direction=asc&offset=0&limit=25&collection=boredapeyachtclub`, get)     
+        //   .then(response => response.json())
+        //   .then(nftArray => {
+        //   setData(nftArray.assets)
+        
+
+        //setData(completeNftArray);
+        //setLoading(true);
 
 
+    },[])
 
+        
+    if (loading === false) { return <h1>Loading...</h1>; }
+    
     
 
     return(
@@ -36,6 +94,8 @@ fetch('https://api.opensea.io/api/v1/collections?offset=0&limit=50', options)
         
         <BrowserRouter>
         <NavBar/>
+
+
         { console.log(walletNFTs) }
 
             <Switch>
@@ -49,7 +109,7 @@ fetch('https://api.opensea.io/api/v1/collections?offset=0&limit=50', options)
                 <Route path="/NFTwallet">
                     <NFTwallet
                     walletNFTs={walletNFTs}
-                    addToWallet={addToWallet}
+                    removeFromWallet={removeFromWallet}
                     />
                 </Route>
 

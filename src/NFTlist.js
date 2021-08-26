@@ -9,23 +9,6 @@ import { Container } from '@material-ui/core';
 function NFTlist(props) {
 
 
-//   return(<>
-//     {
-//         props.data.map(
-//             function(objectIn){
-//                   return(
-//                     <Grid key={NFT.id} item xs={3}>
-//                     <NFTcard
-//                       data={objectIn}
-//                     />
-//                     </Grid>
-                      
-//                   )
-//             }
-//         )
-//     }
-// </>)
-
     return(
         <div id="itemList">
           <Container align="center">    
@@ -41,9 +24,9 @@ function NFTlist(props) {
         props.data.map(
             function(objectIn){
                   return(
-                    <Grid key={objectIn.id} item xs={3}>
+                    <Grid key={objectIn.id} item xs={3} >
                     <NFTcard
-                      data={objectIn}
+                      nftObj={objectIn}
                       addToWallet={props.addToWallet}
                     />
                     </Grid>

@@ -11,3 +11,18 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.nftImage {
+  width: 200px;
+  height: auto;
+  max-width: 100%;
+  max-height: auto;
+}
+
+/*No Clue how to add this to the nftCards yet, check the 
+https://material-ui.com/components/grid/        */
+.nftCard {
+  border-color: black;
+  border-width: 2px;
+  border-radius: 5px;
+}

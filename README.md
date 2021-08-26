@@ -1,4 +1,14 @@
 NFT-Marketplace
+<!-- ## Start Up the Server -->
+
+All of the NFT data is stored in the `db.json` file. You'll want to access this
+data using a JSON server. Run `json-server --watch db.json` to start the server.
+
+This will create a server storing all of our lost NFT data with restful routes
+at `http://localhost:3000/NFTs`. You can also check out the information for
+each individual NFT at `http://localhost:3000/NFTs/:id`.
+
+<!-- --------------------------------------------------------------------------- -->
 
 
 # Getting Started with Create React App
