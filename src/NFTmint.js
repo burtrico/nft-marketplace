@@ -1,4 +1,5 @@
 import './index.css';
+import Mint from './images/mint.png';
 
 // Material-UI Imports
 import { Grid } from '@material-ui/core';
@@ -63,14 +64,31 @@ function NFTmint({walletNFTs, handleAddCard}) {
 
 
     return(
-        <div>
-            <h1> Mint New NFT</h1>
+
+        <div class="formmint" id="itemList">
+       
+          
+
+         
+         
+            
+                  <Container
+                  align="center">
+                  <Grid
+                    align="center"
+                    className="nftCard"
+
+                    item xs={3}
+                    
+                  >
+                  <div>
+                  <div class="headingwhat"><img src={Mint} alt="What is an NFT?"/></div>
             <form onSubmit={handleSubmit}>
                 <input 
                     type="text" 
                     placeholder="Image URL" 
                     name="image_url"
-                    className="input"
+                    className="mintinput"
                     onChange={manageFormData}
                     value={formData.image_url}
                 />
@@ -78,7 +96,7 @@ function NFTmint({walletNFTs, handleAddCard}) {
                     type="text" 
                     placeholder="Name" 
                     name="name"
-                    className="input"
+                    className="mintinput"
                     onChange={manageFormData}
                     value={formData.name}
                 />
@@ -86,7 +104,7 @@ function NFTmint({walletNFTs, handleAddCard}) {
                     type="text" 
                     placeholder="Collection Name" 
                     name="collection"
-                    className="input"
+                    className="mintinput"
                     onChange={manageFormData}
                     value={formData.collection}
                 />
@@ -95,13 +113,39 @@ function NFTmint({walletNFTs, handleAddCard}) {
                 <input 
                     type="submit" 
                     value="Submit"
-                    className="input"
+                    className="addButton"
                 />
             </form>
             <p>{formData.image_url}</p>
-            <p>{formData.name}</p>
-            <p>{formData.collection}</p>
+            <h3>{formData.name}</h3>
+            <h3>{formData.collection}</h3>
+            
         </div>
+
+                  </Grid>
+                  </Container>
+                 
+
+
+
+
+
+        
+         
+          
+      </div>
+
+
+
+
+
+
+
+
+
+
+
+        
     )
 }
 

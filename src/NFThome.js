@@ -5,6 +5,7 @@ import { BrowserRouter , Route , NavLink , Switch } from "react-router-dom";
 import NFTlist from "./NFTlist";
 import NFTwallet from "./NFTwallet";
 import NFTmint from "./NFTmint";
+import NFTwhat from "./NFTwhat";
 import NavBar from "./NavBar";
 
 
@@ -104,14 +105,6 @@ function NFThome(){
         { console.log(walletNFTs) }
 
             <Switch>
-                
-
-                <Route path="/NFTwallet">
-                    <NFTwallet
-                    walletNFTs={walletNFTs}
-                    removeFromWallet={removeFromWallet}
-                    />
-                </Route>
 
                 <Route path="/NFTmint">
                     <NFTmint
@@ -121,7 +114,29 @@ function NFThome(){
 
                 </Route>
 
-                <Route exact path="/">
+                <Route path="/NFTwallet">
+                    <NFTwallet
+                    walletNFTs={walletNFTs}
+                    removeFromWallet={removeFromWallet}
+                    />
+                </Route>
+
+                
+                {/* <Route exact path="/">
+                    <NFTlist
+                    data={data} 
+                    addToWallet={addToWallet}
+                    />
+                </Route> */}
+
+                <Route exact path="/NFTwhat">
+                    <NFTwhat
+                    data={data} 
+                    addToWallet={addToWallet}
+                    />
+                </Route>
+
+                <Route path="/">
                     <NFTlist
                     data={data} 
                     addToWallet={addToWallet}
