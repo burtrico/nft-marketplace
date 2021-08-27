@@ -71,28 +71,27 @@ function NFThome(){
             setLoading(true);
 
         })
-        
+        // Set initial wallet cards:
         fetch('http://localhost:3000/NFTs')
         .then(resp => resp.json())
         .then(walletArray => {
             setWalletNFTs(walletArray)
         })
 
-        //   fetch(`https://api.opensea.io/api/v1/assets?order_direction=asc&offset=0&limit=25&collection=boredapeyachtclub`, get)     
-        //   .then(response => response.json())
-        //   .then(nftArray => {
-        //   setData(nftArray.assets)
-        
-
-        //setData(completeNftArray);
-        //setLoading(true);
-
 
     },[])
 
-        
     if (loading === false) { return <h1>Loading...</h1>; }
     
+   
+  
+    // Passed as a prop (handleAddCard) to <NFTmint />
+    // function handleAddCard(newNFT) {
+      
+    //   const newNFTsArray = [...walletNFTs, newNFT]
+      
+    //   setWalletNFTs(newNFTsArray)
+    // }
     
 
     return(
@@ -117,8 +116,9 @@ function NFThome(){
                 <Route path="/NFTmint">
                     <NFTmint
                     walletNFTs={walletNFTs}
-                    removeFromWallet={removeFromWallet}
+                    handleAddCard={addToWallet}
                     />
+
                 </Route>
 
                 <Route exact path="/">

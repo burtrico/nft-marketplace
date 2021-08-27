@@ -20,7 +20,7 @@ function NavBar({ color, title, description, changeColor }) {
 
         <div class="title">// NFT Marketplace</div>
 
-        <div class="navlink">
+        <div className="navlink">
             <NavLink
                 to="/NFTmint"
                 exact
@@ -34,7 +34,7 @@ function NavBar({ color, title, description, changeColor }) {
             </NavLink>
         </div>
 
-        <div class="navlink">
+        <div className="navlink">
             <NavLink
                 to="/NFTwallet"
                 exact
@@ -48,7 +48,7 @@ function NavBar({ color, title, description, changeColor }) {
             </NavLink>
         </div>
 
-        <div class="navlink">
+        <div className="navlink">
             <NavLink
                 to="/"
                 exact
