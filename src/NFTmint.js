@@ -9,8 +9,9 @@ import {useState} from 'react'
 function NFTmint({walletNFTs, handleAddCard}) {
 
     const [formData, formDataSetter] = useState({
-        title: "",
-        content: ""
+        image_url: "",
+        name: "",
+        collection: ""
     })
     
     function manageFormData(e) {
@@ -53,9 +54,11 @@ function NFTmint({walletNFTs, handleAddCard}) {
         // Clear out input values upon form submission using formDataSetter
         formDataSetter({
         //    ...formData,
-            title: "",
-            content: ""
+            image_url: "",
+            name: "",
+            collection: ""
         })
+        alert("See wallet for your newly minted NFT!")
     }
 
 

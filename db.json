@@ -597,6 +597,12 @@
       "image_url": "https://www.rd.com/wp-content/uploads/2020/12/GettyImages-632913658-e1608239406864.jpg",
       "name": "Le Chat Laid",
       "collection": "Lovely Cats"
+    },
+    {
+      "id": 22646230,
+      "image_url": "https://image.shutterstock.com/image-photo/sphynx-4-years-old-against-600w-1015489432.jpg",
+      "name": "Le Sphynx",
+      "collection": "Lovely Cats"
     }
   ]
 }
