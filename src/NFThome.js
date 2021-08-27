@@ -7,6 +7,8 @@ import NFTwallet from "./NFTwallet";
 import NFTmint from "./NFTmint";
 import NFTwhat from "./NFTwhat";
 import NavBar from "./NavBar";
+import Opensea from './images/opensea.png';
+import Powered from './images/powered.png';
 
 
 function NFThome(){
@@ -145,7 +147,12 @@ function NFThome(){
 
             </Switch>
         </BrowserRouter>
+        <div class="footer">
+        <img  src={Powered} alt="powered by"/>
+            
+            <a target="_blank" href="https://docs.opensea.io/"><img class="openlogo" src={Opensea} alt="Opensea"/></a></div>
         </div>
+        
         )
   
 }

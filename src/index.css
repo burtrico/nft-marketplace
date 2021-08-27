@@ -157,3 +157,18 @@ https://material-ui.com/components/grid/        */
   display: block;
 }
 
+.footer {
+  margin: 75px 25px 0 0;
+  text-align: right;
+  display: block;
+  color: white;
+}
+.openlogo {
+  border-color: rgb(88, 88, 88);
+  border-width: 2px;
+  border-radius: 15px;
+  border-style: solid;
+  background-color: white;
+  box-shadow: 0px 0px 10px rgba(255, 255, 255, 1);
+  display: inline;
+}
