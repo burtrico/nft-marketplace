@@ -19,8 +19,7 @@ function NFTcard({nftObj, addToWallet, removeFromWallet}) {
       else if(nftObj.asset_contract && nftObj.asset_contract.name === "pudgypenguins") { let x = 10 }
       else  { let x = 20 }
         const price = (Math.random()*x).toFixed(2)
-        const eth = "https://storage.opensea.io/files/6f8e2979d428180222796ff4a33ab929.svg"
-        return( <div className="divPrice"> <h4><img src={eth} className="eth" /> {price}</h4></div>  )
+        return( <div className="divPrice"> <h4>{price}</h4></div>  )
 
       // } } 
     }
@@ -29,9 +28,9 @@ function NFTcard({nftObj, addToWallet, removeFromWallet}) {
     return (
         <div >
         <img src={nftObj.image_url} className="nftImage" alt="no img" />
-        <h3>{nftObj.name}</h3>  
-        <h4>{(nftObj.asset_contract) ? nftObj.asset_contract.name : nftObj.collection }</h4>
-        {renderPrice()}
+        <h3 className="cardname">name: {nftObj.name}</h3>  
+        <h4 className="cardcontract">collection: {(nftObj.asset_contract) ? nftObj.asset_contract.name : nftObj.collection }</h4>
+        <div className="cardprice">{renderPrice()}</div>
         
 
       <div className="addButtonDiv" tabIndex="0">
