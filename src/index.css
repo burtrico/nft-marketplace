@@ -202,3 +202,9 @@ https://material-ui.com/components/grid/        */
   background-repeat: no-repeat;
   background-size: 10px;
 }
+
+.nftWhat {
+  font-family: 'Inter var',sans-serif;
+  font-weight: 500;
+
+}
